@@ -13,7 +13,7 @@
     deploy:
         context: francisjoy/DEV
         type: statefulset
-        replicas: 1
+        replicas: 2
         ingress: none
         port:
         - 3306
