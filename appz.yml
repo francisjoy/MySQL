@@ -13,7 +13,7 @@
     deploy:
         context: francisjoy/DEV
         type: statefulset
-        replicas: 2
+        replicas: 1
         ingress: none
         port:
         - 3306
@@ -23,10 +23,12 @@
       - claim: mysql-data
         mount: /var/lib/mysql
         name: data
+        class: microk8s-hostpath
         size: 5Gi
       - claim: mysql-backup
         mount: /appz/backup
         name: backup
+        class: microk8s-hostpath
         size: 5Gi
 
     properties:
